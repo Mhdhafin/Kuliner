@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Kuliner</title>
+    <!-- Tailwind CDN -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <!-- style -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,6 +19,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet" />
+    <!-- Animation Refresh -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Data feather -->
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
@@ -26,13 +31,14 @@
       <div class="navbar-nav">
         <a href="#">Home</a>
         <a href="#menu">Menu</a>
-        <a href="#gallery">Gallery</a>
+        <a href="#rating">Rating</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
 
+    <!-- Hero section -->
     <section class="hero">
-      <main class="content">
+      <main class="content" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos="fade-left">
         <h2>Unina <span>Kitchen</span>.</h2>
         <p>Silahkan pesan pesanan keiginan anda</p>
         <p>Selamat Makan!</p>
@@ -41,8 +47,9 @@
         <img class="background" src="./images/bg0.jpg" alt="" />
         <img class="background" src="./images/bg1.jpg" alt="" />
         <img class="background" src="./images/bg2.jpg" alt="" />
+        <img class="background" src="./images/bg3.jpg" alt="" />
       </div>
-      <div class="pembuka">
+      <div class="pembuka" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
         <div class="card-extra">
           <a href="" class="material-symbols-outlined">cake</a>
           <h2>Catering Service</h2>
@@ -55,62 +62,147 @@
           <a href="" class="material-symbols-outlined">HandShake</a>
           <h2>Kerja Sama</h2>
         </div>
+        <div class="card-extra">
+          <a href="" class="material-symbols-outlined">FastFood</a>
+          <h2>Antar Service</h2>
+        </div>
       </div>
     </section>
 
+    <!-- daftar menu -->
     <section class="menu" id="menu">
       <div class="wrapper">
         <h1>Daftar Menu</h1>
       </div>
-      <div class="row">
-        <div class="card">
-          <h2>Makanan</h2>
-          <ul>
-            <li>Soto Padang 20K</li>
-            <li>Ketupat Sayur 12K</li>
-            <li>Tekwan 10K</li>
-            <li>Padang 20K</li>
-            <li>Soto Padang 20K</li>
-            <li>Soto Padang 20K</li>
-          </ul>
-        </div>
+      <div class="slider-container" data-aos="fade-up" data-aos-duration="2000">
+        <div class="slider">
+          <div class="slide" id="slide1">
+            <div class="row">
+              <!-- Makanan -->
+              <h2>Makanan</h2>
+            </div>
+            <div class="eat">
+              <div class="sajian">
+                <img src="/images/bg3.jpg" alt="" />
+                <h3>Soto Padang <span>20K</span></h3>
+              </div>
 
-        <div class="card">
-          <h2>Minuman</h2>
-          <ul>
-            <li>Es Teh 4K</li>
-            <li>Teh Tawar 3K</li>
-            <li>Es Milo 5K</li>
-            <li>Kopi Hitam <span>anget/dingin</span> 3K</li>
-            <li>Coffe Mix 4K</li>
-            <li>Es Nutrisari 4K</li>
-          </ul>
+              <div class="sajian">
+                <img src="./images/tupat.jpg" alt="" />
+                <h3>Lontong Sayur <span>12K</span></h3>
+              </div>
+
+              <div class="sajian">
+                <img src="/soto.png" alt="" />
+              </div>
+
+              <div class="sajian">
+                <img src="/soto.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="slide" id="slide2">
+            <div class="row">
+              <!-- Minuman -->
+              <h2>Minuman</h2>
+            </div>
+            <div class="eat">
+              <div class="sajian">
+                <img src="/images/bg1.jpg" alt="" />
+                <h3>Soto Padang <span>20K</span></h3>
+              </div>
+
+              <div class="sajian">
+                <img src="/soto.png" alt="" />
+                <h3>Lontong Sayur <span>12K</span></h3>
+              </div>
+
+              <div class="sajian">
+                <img src="/soto.png" alt="" />
+              </div>
+
+              <div class="sajian">
+                <img src="/soto.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="slide" id="slide3">
+            <h2>Tentang Kami</h2>
+            <p>Deskripsi tentang kami disini...</p>
+          </div>
+          <div class="slide" id="slide4">
+            <h2>Kontak Kami</h2>
+            <p>Informasi kontak kami disini...</p>
+          </div>
+        </div>
+        <a class="prev-btn" onclick="moveSlide('prev')"><i data-feather="chevron-left"></i></a>
+        <a class="next-btn" onclick="moveSlide('next')"><i data-feather="chevron-right"></i></a>
+      </div>
+    </section>
+
+    <!-- Rated -->
+    <section class="rating" id="rating" data-aos="fade-up">
+      <h1 class="judul-rated">Rating</h1>
+      <div class="card-container">
+        <div class="card-rated" data-aos="fade-up" data-aos-duration="2000">
+          <img src="./images/Dhafin.jpg" width="200px" alt="" />
+          <h2>Dhafin Haron</h2>
+          <p>"Ketika mencicipi makanan yang lezat, rasanya seperti merasakan kebahagiaan surga di setiap gigitan."</p>
+        </div>
+        <div class="card-rated" data-aos="fade-down" data-aos-duration="2000">
+          <img src="./images/komeng.jpeg" width="200px" alt="" />
+          <h2>Komeng</h2>
+          <p>"Setiap hidangan adalah tiket untuk petualangan gastronomi. Dengan setiap suapan, kita menjelajahi budaya, sejarah, dan kekayaan kuliner dunia. "</p>
+        </div>
+        <div class="card-rated" data-aos="fade-up" data-aos-duration="2000">
+          <img src="./images/zurk.jpg" width="200px" alt="" />
+          <h2>Mark Zuckerberg</h2>
+          <p>"Dalam setiap hidangan, bumbu dan bahan saling berpadu untuk menciptakan harmoni rasa yang menggugah selera."</p>
+        </div>
+        <div class="card-rated" data-aos="fade-down" data-aos-duration="2000">
+          <img src="./images/win.jpg" width="200px" alt="" />
+          <h2>Windah Basudara</h2>
+          <p>"Ketika seseorang memasak dengan cinta, makanan itu memiliki rasa yang istimewa."</p>
         </div>
       </div>
     </section>
 
-    <div class="container">
-      <section class="gallery" id="gallery">
-        <div class="judul">
-          <h1>Gallery</h1>
-          <p>Unina Kuliner <span>Khas RM Padang</span></p>
+    <!-- <section class="pt-36 pb-32" id="contact">
+      <div class="container">
+        <div class="w-full px">
+          <div class="max-w-xl text-center mx-auto mb-16">
+            <h4 class="font-semibold text-lg text-[#ff3300] mb-2">Contact</h4>
+            <h2 class="font-bold text-3xl text-dark mb-4 sm:text-4xl">Hubungi Kami</h2>
+            <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, voluptas.</p>
+          </div>
         </div>
 
-        <img src="https://source.unsplash.com/random/201x201" alt="" />
-        <img src="https://source.unsplash.com/random/202x202" alt="" />
-        <img src="https://source.unsplash.com/random/203x203" alt="" />
-        <img src="https://source.unsplash.com/random/204x204" alt="" />
-        <img src="https://source.unsplash.com/random/205x205" alt="" />
-        <img src="https://source.unsplash.com/random/206x206" alt="" />
-        <img src="https://source.unsplash.com/random/207x207" alt="" />
-        <img src="https://source.unsplash.com/random/208x208" alt="" />
-        <img src="https://source.unsplash.com/random/209x209" alt="" />
-        <img src="https://source.unsplash.com/random/210x210" alt="" />
-      </section>
-    </div>
+        <form>
+          <div class="w-full lg:w-2/3 lg:mx-auto">
+            <div class="w-full px-4 mb-8">
+              <label for="name" class="text-base font-bold text-coffe">Nama</label>
+              <input type="text" id="name" class="w-full bg-[#e4e4e4] text-dark p-3 rounded-md focus:outline-none focus:ring-coffe focus:ring-1 focus:border-coffe" />
+            </div>
+            <div class="w-full px-4 mb-8">
+              <label for="email" class="text-base font-bold text-coffe">Email</label>
+              <input type="email" id="email" class="w-full bg-[#e4e4e4] text-dark p-3 rounded-md focus:outline-none focus:ring-coffe focus:ring-1 focus:border-coffe" />
+            </div>
+            <div class="w-full px-4 mb-8">
+              <label for="message" class="text-base font-bold text-coffe">Pesan</label>
+              <textarea type="message" placeholder="Tulis pesan.." id="name" class="w-full bg-[#e4e4e4] text-dark p-3 rounded-md focus:outline-none focus:ring-coffe focus:ring-1 focus:border-coffe h-32"></textarea>
+            </div>
+            <div class="w-full px-4 mb-8">
+              <button class="text-base font-semibold bg-[#ff3300] py-2 px-4 text-white rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500">Kirim</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section> -->
+
     <script src="script.js"></script>
     <script>
       feather.replace();
+      AOS.init();
     </script>
   </body>
 </html>

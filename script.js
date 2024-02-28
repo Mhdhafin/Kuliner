@@ -39,3 +39,18 @@ function ChangeBg() {
 }
 
 setInterval(ChangeBg, 3000);
+
+function moveSlide(direction) {
+  const slider = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".slide");
+  const sliderWidth = slider.clientWidth;
+  const currentTranslate = parseFloat(window.getComputedStyle(slider).getPropertyValue("transform").split(",")[4]);
+
+  if (direction === "prev") {
+    const prevSlideIndex = Math.max(Array.from(slides).findIndex((slide) => slide.offsetLeft >= -currentTranslate) - 1, 0);
+    slider.style.transform = `translateX(-${slides[prevSlideIndex].offsetLeft}px)`;
+  } else if (direction === "next") {
+    const nextSlideIndex = Math.min(Array.from(slides).findIndex((slide) => slide.offsetLeft >= -currentTranslate) + 1, slides.length);
+    slider.style.transform = `translateX(-${slides[nextSlideIndex].offsetLeft}px)`;
+  }
+}
