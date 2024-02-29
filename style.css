@@ -387,6 +387,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease-out;
+  margin-bottom: 24px;
 }
 
 .contact-button:hover {
@@ -396,26 +397,64 @@ body {
 footer {
   background-color: #ff3300;
   padding-top: 6rem;
-  padding-bottom: 3rem;
+  padding-bottom: 20px;
 }
 
-.sosial {
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.footer-desc {
   width: 100%;
   padding: 0 20px;
   color: white;
 }
 
-.sosial p {
+.footer-desc p {
   color: #e4e4e4;
+  font-size: 1.3rem;
 }
 
-.sosial h1 {
+.footer-desc a {
+  display: block;
+  color: #e4e4e4;
+  transition: 0.3s;
+  padding: 0 20px;
+  font-size: 1.3rem;
+}
+
+.footer-desc a:hover {
+  color: white;
+  transform: translateX(-5px) translateY(-3px);
+}
+
+.footer-desc h1 {
   font-size: 2.25rem;
 }
 
-.sosial h2 {
-  font-size: 1.6rem;
+.footer-desc h2 {
+  font-size: 1.8rem;
   margin-bottom: 1.3rem;
+}
+.footer-name {
+  padding-top: 3rem;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.footer-name p {
+  margin-top: 24px;
+  text-align: center;
+  color: #e4e4e4;
+  font-size: 0.8rem;
+}
+
+.footer-name p a {
+  color: #000;
+  font-weight: 600;
 }
 
 /* Responsives */
