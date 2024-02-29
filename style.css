@@ -170,19 +170,18 @@ body {
 
 .eat {
   padding-top: 2rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .sajian {
-  display: block;
   margin: 0 auto;
   text-align: center;
 }
 
 .sajian img {
-  width: 250px;
+  width: 200px;
+  height: 150px;
   border-radius: 5px;
 }
 
@@ -479,6 +478,12 @@ footer {
     padding: 2rem;
   }
 
+  .eat {
+    margin-top: -18px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .card-container {
     display: flex;
     flex-direction: row;
@@ -494,8 +499,10 @@ footer {
     width: 80%;
   }
 
-  .prev-btn {
-    left: 2px;
+  .prev-btn,
+  .next-btn {
+    width: 20%;
+    font-size: 1.8rem;
   }
 
   .navbar-nav {
@@ -508,7 +515,8 @@ footer {
   footer .container {
     display: block;
   }
-  .footer-desc {
+  .footer-desc,
+  .eat .sajian {
     margin-bottom: 20px;
   }
 }
