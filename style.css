@@ -301,6 +301,7 @@ body {
 .card-container {
   padding: 15px;
   display: flex;
+
   justify-content: center;
   align-items: center;
 }
@@ -311,7 +312,6 @@ body {
   height: 480px;
   padding: 2rem 1.2rem;
   background-color: #e4e4e4;
-
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
 }
 
@@ -404,6 +404,7 @@ footer {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
+  padding-left: 23px;
   align-items: center;
 }
 
@@ -458,3 +459,68 @@ footer {
 }
 
 /* Responsives */
+
+@media screen and (max-width: 768px) {
+  * {
+    width: 100%;
+  }
+
+  .background-container {
+    background-size: none;
+  }
+  .navbar-logo span {
+    display: block;
+  }
+  .navbar-logo {
+    left: 0;
+  }
+
+  .menu {
+    padding: 2rem;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card-rated {
+    margin-top: 40px;
+    width: 70%;
+  }
+
+  .card-rated img {
+    width: 80%;
+  }
+
+  .prev-btn {
+    left: 2px;
+  }
+
+  .navbar-nav {
+    display: none;
+  }
+  .pembuka,
+  .content {
+    display: none;
+  }
+  footer .container {
+    display: block;
+  }
+  .footer-desc {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 100%;
+  }
+}
